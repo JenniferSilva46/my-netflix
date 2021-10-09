@@ -76,4 +76,58 @@ export default {
       },
     ];
   },
+  // Pegar informações de um movie especifico
+  getMovieInfo: async (movieId, type) => {
+    let info = {};
+    if (movieId) {
+      switch (type) {
+        case "tv":
+          info = await basicFetch(
+            `${API_BASE}/tv/${movieId}?language=pt-BR&api_key=${API_Key}`
+          );
+
+          break;
+        case "movie":
+          info = await basicFetch(
+            `${API_BASE}/movie/${movieId}?language=pt-BR&api_key=${API_Key}`
+          );
+
+          break;
+
+        default:
+          info = null;
+          break;
+      }
+    }
+    return info;
+  },
+  getMoviePlay: async (movieId, type) => {
+    let urlmovie = {};
+    if (movieId) {
+      switch (type) {
+        case "tv":
+          urlmovie = await basicFetch(
+            `${API_BASE}/tv/${movieId}/videos?api_key=${API_Key}&language=en-US`
+          );
+
+          break;
+        case "movie":
+          urlmovie = await basicFetch(
+            `${API_BASE}/movie/${movieId}/videos?api_key=${API_Key}&language=en-US`
+          );
+
+          break;
+
+        default:
+          urlmovie = null;
+          break;
+      }
+    }
+    return urlmovie;
+    let play = await fetch(
+      `https://api.themoviedb.org/3/tv/${movieId}/videos?api_key=${API_Key}&language=en-US`
+    );
+    let json = await play.json();
+    return json;
+  },
 };
