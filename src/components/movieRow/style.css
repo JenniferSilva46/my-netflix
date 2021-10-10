@@ -6,6 +6,10 @@
   margin: 0px 0px 0px 30px;
 }
 
+.movie-row--list {
+  transition: all ease 0.4s;
+}
+
 /* Tudo que passar na tela na orizontal deve ser cortado*/
 .movie-row--list-area {
   overflow-x: hidden;
@@ -13,9 +17,7 @@
 }
 
 /*Item ao lado do outro*/
-.movie-row--list {
-  width: 9999999999px;
-}
+
 .movie-row--item {
   display: inline-block;
   width: 150px;
@@ -61,4 +63,11 @@
 .movie-row:hover .movie-row--left,
 .movie-row:hover .movie-row--right {
   opacity: 1;
+}
+
+@media (max-width:760px) {
+  .movie-row--left,
+  .movie-row--right {
+    opacity: 1;
+  }
 }
