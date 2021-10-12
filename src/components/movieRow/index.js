@@ -6,7 +6,6 @@ import { MdNavigateNext } from "react-icons/md";
 
 export default ({ title, items }) => {
   const [scrollX, setScrollX] = useState(0);
-
   const handleLeftArrow = () => {
     // Pegar o valor do scrollX soma com o valor da metade da tela
     let x = scrollX + Math.round(window.innerWidth / 2);
@@ -42,6 +41,7 @@ export default ({ title, items }) => {
           {items.results.length > 0 &&
             items.results.map((item, key) => (
               <div key={key} className="movie-row--item">
+
                 <img
                   src={`https://image.tmdb.org/t/p/w300${item.poster_path}`}
                   alt={item.original_title}
