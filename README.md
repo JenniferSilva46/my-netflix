@@ -1,6 +1,6 @@
 # Clone da netflix
 
-# Aplicando conceitos do REACTJS hooks e API Rest externa do TMDB para manipular informações reais
+# Aplicando conceitos do REACTJS hooks e API externa do TMDB para manipular informações reais
 
 ### Para executar esse projeto
 
