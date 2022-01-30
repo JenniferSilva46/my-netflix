@@ -44,3 +44,18 @@ footer a {
   align-items: center;
   justify-content: center;
 }
+
+.login {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 99;
+  height: 100vh;
+  width: 100%;
+  background: var(--backgroud) url("https://cdn.falauniversidades.com.br/wp-content/uploads/2018/03/fala-universidades-netflix-3.jpg") no-repeat center top;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

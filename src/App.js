@@ -7,11 +7,14 @@ import tmdb from "./API/index";
 import MovieRow from "./components/movieRow/index";
 import FeaturedMovie from "./components/featuredMovie/index";
 import Header from "./components/header/index"
+import Login from "./components/login/index";
+
 const App = () => {
   const [movieList, setMovieList] = useState([]);
   const [featuredData, setFeaturedData] = useState(null);
   const [play, setPlay] = useState(null);
   const [blackHeader, setBlackheader] = useState(false);
+  const [auth, setAuth] = useState(false);
 
   useEffect(() => {
     const loadAll = async () => {
@@ -79,6 +82,11 @@ const App = () => {
 
         <div className="loading">
           <img src="https://media.filmelier.com/noticias/br/2020/03/Netflix_LoadTime.gif" alt="loading" />
+        </div>
+      }
+      {auth == true &&
+        <div className="login">
+          <Login />
         </div>
       }
     </div>
